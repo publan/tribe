@@ -10,7 +10,7 @@
 #           9 @ $1530
 
 class Formats
-  FORMATS = [
+  FORMATS = {
     img: [
       { count: 5, price: 450 },
       { count: 10, price: 800 }
@@ -25,5 +25,12 @@ class Formats
       { count: 5, price: 900 },
       { count: 9, price: 1530 }
     ]
-  ]
+  }
+
+  def lookup(code)
+    return false if code.nil?
+    return false unless FORMATS.keys.include? code.to_s
+
+    FORMATS.fetch code.to_s
+  end
 end
