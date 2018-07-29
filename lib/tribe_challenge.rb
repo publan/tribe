@@ -1,6 +1,6 @@
 require "tribe_challenge/version"
-require "formats"
+require "tribe_challenge/tribe_bundles"
+require "tribe_challenge/tribe_bundler"
 
 module TribeChallenge
-  # Your code goes here...
 end

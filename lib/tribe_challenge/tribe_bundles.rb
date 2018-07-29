@@ -9,8 +9,8 @@
 #           5 @ $900
 #           9 @ $1530
 
-class Formats
-  FORMATS = {
+class TribeBundles
+  BUNDLES = {
     img: [
       { count: 5, price: 450 },
       { count: 10, price: 800 }
@@ -26,11 +26,23 @@ class Formats
       { count: 9, price: 1530 }
     ]
   }
+  
+  class << self
+    def codes
+      BUNDLES.keys
+    end
 
-  def lookup(code)
-    return false if code.nil?
-    return false unless FORMATS.keys.include? code.to_s
+    def bundles(code)
+      return false if code.nil?
 
-    FORMATS.fetch code.to_s
+      BUNDLES.fetch code.to_sym
+    end
+
+    def bundle_counts(code)
+      response = bundles(code)
+      return false if response == false
+
+      return response.map { |h| h[:count] }
+    end
   end
 end
