@@ -5,6 +5,10 @@ class TestTribeBundler < MiniTest::Test
     @subject = TribeBundler.new
   end
 
+  def test_bundle
+
+  end
+
   def test_parse
     response = <<-HDOC
     10 IMG $800
@@ -17,6 +21,5 @@ class TestTribeBundler < MiniTest::Test
       1 x 3 $570
     HDOC
     assert_equal response, @subject.parse("10 IMG 15 FLAC 13 VID")
-    #assert_equal response, @subject.parse("13 VID")
   end
 end
