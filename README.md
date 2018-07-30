@@ -17,7 +17,8 @@ To get the response given in the challenge, type:
 
 ## Development
 
-After cloning the repo, run `bundle install` to get dependencies. Pry-byebug is included in the development dependencies for debugging.
+After cloning the repo, run `bundle install` to get dependencies. Guard and  Pry-byebug is included in the development dependencies for TDD and debugging.
+Its best to run `bundle exec guard` for a red-green development cycle on this project.
 
 ## License
 
