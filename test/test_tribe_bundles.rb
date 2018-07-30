@@ -1,8 +1,8 @@
-require "test_helper"
+require_relative "test_helper"
 
 class TestTribeBundles < MiniTest::Test
   def setup
-    @subject = TribeBundles.new
+    @subject = TribeBundles
   end
 
   def test_bundles_has_data
@@ -19,12 +19,12 @@ class TestTribeBundles < MiniTest::Test
   def test_bundles
     # looks lazy, but I'd rather not having to change this if BUNDLES gets
     # updated with new values 
-    assert_equal true, @subject.bundles('img').size > 0
+    assert_equal true, @subject.bundles(:img).size > 0
   end
 
   def test_bundles_counts
     # looks lazy, but I'd rather not having to change this if BUNDLES gets
     # updated with new values 
-    assert_equal true, @subject.bundle_counts('img').size > 0
+    assert_equal true, @subject.bundle_counts(:img).size > 0
   end
 end
